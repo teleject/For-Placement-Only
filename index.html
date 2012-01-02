@@ -1,88 +1,198 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset='utf-8'>
+<title>filler text, dummmy text, lorem ipsum: For Placement Only</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+	form, body {
+		margin: 0;
+		padding: 0;
+	}
+	#header {
+		text-align: center;
+	}
+	
+	#header h1 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	}
+	
+	#content {
+		margin: 0 10% 0 10%;
+	}
+	
+	fieldset {
+		margin-top: 1.5em;
+	}
+	
+	fieldset, fieldset input, fieldset select {
+		font-size: large;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+	}
 
-  <title>teleject/For-Placement-Only @ GitHub</title>
+	
+	legend {
+		font-size: medium;
+		text-align: left;
+		font-family: Georgia, "Times New Roman", Times, serif;
+	}
+	textarea {
+		width: 100%;
+	}
+	
+	hr {
+		display: none;
+	}
+	
+	#footer {
+		background-color: #CCCCCC;
+		border-top: 1px solid black;
+		padding: .1em .1em .1em 1em;
+	}
+	
+</style>
+<script type="text/javascript" language="javascript">
+    //<![CDATA[
+        var lorem = '';
+  
+ 		function toggle(targetId) {
+  			if (document.getElementById) {
+  				target = document.getElementById( targetId );
+  				if (target.style.display == "none") {
+  					target.style.display = "";
+  				} else {
+  					target.style.display = "none";
+  				}
+  			}
+		} 
+        
+        function objectTag() {
+			if (document.theForm.type.value == 'characters') {		
+	            lorem = document.theForm.loremString.value;
+	            var chars = document.theForm.numbers.value;
+	            if (chars == ''){
+		            chars = 543;
+	            }
+	            var morem = lorem;
+	            while (lorem.length < chars){
+	            	lorem += morem;
+	            }
+	            var theString =  lorem.substring(0, chars);
+	            document.forms[0].output.value=theString;
+			} else if (document.theForm.type.value == 'words') {
+	            lorem = document.theForm.loremString.value;
+	            var words = document.theForm.numbers.value;
+	            if (words == ''){
+		            words = 84;
+	            }
+				var list = new Array();
+				list = lorem.split(' ');				
+				var morem = new Array();				
+	            morem = list;								
+	            while (list.length < words){
+	            	list = list.concat(morem);
+	            }
+				var theString = '';
+				for(var i = 0; i < words; i++) {
+					theString = theString + list[i] + ' ';
+				}
+	            document.forms[0].output.value=theString;			
+			} else {
+	            lorem = document.theForm.loremString.value;
+	            var paragraphs = document.theForm.numbers.value;
+	            if (paragraphs == ''){
+		            paragraphs = 1;
+	            }
+				var list = new Array();
+				list[0] = lorem;		
+	            var morem = "\n\n" + list;				
+	            while (list.length < paragraphs){
+	            	list = list.concat(morem);
+	            }
+				var theString = '';
+				for(var i = 0; i < paragraphs; i++) {
+					theString = theString + list[i];
+				}
+	            document.forms[0].output.value=theString;				
+			}
+        }    
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #2cbbc4;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #d3443b; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #d3443b; }
-    h3 { text-align: center; color: #d3443b; }
-    a { color: #d3443b; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+
+        function copypaste() {
+            document.forms[0].output.focus();
+            document.forms[0].output.select();
+            therange=document.forms[0].output.createTextRange();
+            therange.execCommand("Copy");
+        }        
+        
+    //]]>
+    </script>
 </head>
-
-<body>
-  <a href="https://github.com/teleject/For-Placement-Only"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/teleject/For-Placement-Only/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/teleject/For-Placement-Only/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/teleject/For-Placement-Only">For-Placement-Only</a>
-      <span class="small">by <a href="https://github.com/teleject">teleject</a></span></h1>
-
-    <div class="description">
-      
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>teleject (schmitt@christopher.org)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Christopher Schmitt (schmitt@christopher.org)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/teleject/For-Placement-Only/zipball/master">zip</a> or
-      <a href="https://github.com/teleject/For-Placement-Only/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/teleject/For-Placement-Only</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/teleject/For-Placement-Only">teleject/For-Placement-Only</a>
-    </div>
-
-  </div>
-
+<body> 
+<div id="header"> 
+  <h1>For Placement Only</h1> 
+  <p>The filler text generator.</p> 
+  <noscript>
+   JavaScript is required. (Working on a non-JavaScript version.) 
+  </noscript> 
+</div> 
+<div id="content"> 
+  <form name="theForm" action="javascript:objectTag();"> 
+    <fieldset> 
+    <legend>Step 1: Pick Type of Text</legend> 
+    <label for="loremString">Select Text: </label> 
+    <select name="loremString" onchange="javascript:objectTag();"> 
+      <option value="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                 selected="selected">Lorem ipsum dolor sit... </option> 
+      <option value="Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum. Defacto lingo est igpay atinlay. Marquee selectus non provisio incongruous feline nolo contendre. Gratuitous octopus niacin, sodium glutimate. Quote meon an estimate et non interruptus stadium. Sic tempus fugit esperanto hiccup estrogen. Glorious baklava ex librus hup hey ad infinitum. Non sequitur condominium facile et geranium incognito. Epsum factorial non deposit quid pro quo hic escorol. Marquee selectus non provisio incongruous feline nolo contendre Olypian quarrels et gorilla congolium sic ad nauseum. Souvlaki ignitus carborundum e pluribus unum.">Epsum
+      factorial non deposit...</option> 
+      <option value="Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., li tot Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilit&aacute; de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.">Li
+      Europan lingues es membres... </option> 
+      <option value="Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental: in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.">Ma
+      quande lingues coalesce... </option> 
+    </select> 
+    </fieldset> 
+    <fieldset> 
+    <legend>Step 2: Select Amount of Text</legend> 
+    <label for="type">Number ( 
+    <select name="numbers"  onchange="javascript:objectTag();"> 
+      <option value="1">1</option> 
+      <option value="2">2</option> 
+      <option value="3" selected="selected">3</option> 
+      <option value="4">4</option> 
+      <option value="5">5</option> 
+      <option value="6">6</option> 
+      <option value="7">7</option> 
+    </select> 
+    ) of </label> 
+    <select name="type"  onchange="javascript:objectTag();"> 
+      <option value="characters">Characters</option> 
+      <option value="words">Words</option> 
+      <option value="paragraphs" selected="selected">Paragraphs</option> 
+    </select> 
+    </fieldset> 
+    <fieldset> 
+    <legend>Step 3: Copy and Paste Text</legend> 
+    <textarea cols="50" rows="10" name="output"></textarea> 
+    <!--  <input type="submit" name="btnOK" value="Go" />  --> 
+     
+    </fieldset> 
+  </form> 
+  <hr /> 
+  <h3>You might be interested in the following:</h3> 
+  <ul> 
+    <li><a href="http://www.straightdope.com/columns/010216.html">What does the
+        filler text "lorem ipsum" mean?</a></li> 
+    <li><cite><a href="http://www.amazon.com/exec/obidos/ASIN/0201353679/heatvisioncom-20/">The
+          Non-Designer's Type Book</a></cite> by Robin Williams</li> 
+    <li><cite><a href="http://www.amazon.com/exec/obidos/ASIN/0735713286/heatvisioncom-20/">Web
+          Design on a Shoestring</a></cite> by Carrie Bickner</li> 
+  </ul> 
+</div> 
+<div id="footer"> 
+  <hr /> 
+  <p>Copyright 2003 <a href="http://www.heatvision.com/">Heatvision.com</a> and
+    Christopher Schmitt. All rights boldly reserved.</p> 
+</div> 
 </body>
 </html>
